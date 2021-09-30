@@ -22,7 +22,11 @@ class MyApp extends StatelessWidget {
             RaisedButton(
               child: Text('answer 2'),
               onPressed: null,
-            )
+            ),
+            RaisedButton(
+              child: Text('answer 3'),
+              onPressed: null,
+            ),
           ],
         ),
       ),
