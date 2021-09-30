@@ -17,8 +17,12 @@ class MyApp extends StatelessWidget {
             Text('This is a question!'),
             RaisedButton(
               child: Text('answer 1'),
+              onPressed: null,
             ),
-            RaisedButton(child: Text('answer 2'))
+            RaisedButton(
+              child: Text('answer 2'),
+              onPressed: null,
+            )
           ],
         ),
       ),
