@@ -13,7 +13,13 @@ class MyApp extends StatelessWidget {
           title: Text('My first app'),
         ),
         body: Column(
-          children: <Widget>[],
+          children: [
+            Text('This is a question!'),
+            RaisedButton(
+              child: Text('answer 1'),
+            ),
+            RaisedButton(child: Text('answer 2'))
+          ],
         ),
       ),
     );
