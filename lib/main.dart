@@ -6,12 +6,15 @@ void main() {
 
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
+    var questions = ['What is your name?', 'How are you?'];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('My first app'),
         ),
-        body: Text('Body text'),
+        body: Column(
+          children: <Widget>[],
+        ),
       ),
     );
   }
