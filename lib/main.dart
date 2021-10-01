@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           children: [
             Text('This is a question!'),
             RaisedButton(
-              child: Text('answer 1'),
+              child: Text(questions.elementAt(0)),
               onPressed: answerQuestion,
             ),
             RaisedButton(
