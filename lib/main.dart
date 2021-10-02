@@ -4,7 +4,7 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   var questionIndex = 0;
 
   void answerQuestion() {
