@@ -27,7 +27,13 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = ['What is your name?', 'How are you?'];
+    var questions = [
+      {
+        'questionText': 'What is your name?',
+        'answers': ['Blue', 'Red', 'Yellow']
+      },
+      'How are you?'
+    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
