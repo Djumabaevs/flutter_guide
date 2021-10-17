@@ -7,6 +7,17 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
+  final questions = const [
+    {
+      'questionText': 'What is your name?',
+      'answers': ['Blue', 'Red', 'Yellow']
+    },
+    {
+      'questionText': 'What is your fav dish?',
+      'answers': ['Plov', 'Manty', 'Fish']
+    }
+  ];
+
   @override
   State<StatefulWidget> createState() {
     //TODO: implement createState
@@ -15,11 +26,11 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
+  var _questionIndex = 0;
 
   void _answerQuestion() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
 
     print('Answer chosen!');
@@ -27,13 +38,6 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      {
-        'questionText': 'What is your name?',
-        'answers': ['Blue', 'Red', 'Yellow']
-      },
-      'How are you?'
-    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -41,9 +45,11 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Question(questions[questionIndex]),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
+            Question(questions[_questionIndex]['questionText'] as String),
+            ...(questions[_questionIndex]['answers'] as List<String>)
+                .map((answer) {
+              return Answer(_answerQuestion, answer);
+            }).toList(),
             RaisedButton(
               child: Text('answer 3'),
               onPressed: () {
